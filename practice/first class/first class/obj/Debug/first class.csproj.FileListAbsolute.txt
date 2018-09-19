@@ -1,0 +1,7 @@
+C:\Users\venu.kalam\source\repos\first class\first class\bin\Debug\first class.exe.config
+C:\Users\venu.kalam\source\repos\first class\first class\bin\Debug\first class.exe
+C:\Users\venu.kalam\source\repos\first class\first class\bin\Debug\first class.pdb
+C:\Users\venu.kalam\source\repos\first class\first class\obj\Debug\first class.csprojAssemblyReference.cache
+C:\Users\venu.kalam\source\repos\first class\first class\obj\Debug\first class.csproj.CoreCompileInputs.cache
+C:\Users\venu.kalam\source\repos\first class\first class\obj\Debug\first class.exe
+C:\Users\venu.kalam\source\repos\first class\first class\obj\Debug\first class.pdb

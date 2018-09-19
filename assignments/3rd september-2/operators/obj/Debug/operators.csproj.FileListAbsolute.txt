@@ -1,0 +1,7 @@
+C:\Users\venu.kalam\source\repos\3rd september-2\operators\bin\Debug\operators.exe.config
+C:\Users\venu.kalam\source\repos\3rd september-2\operators\bin\Debug\operators.exe
+C:\Users\venu.kalam\source\repos\3rd september-2\operators\bin\Debug\operators.pdb
+C:\Users\venu.kalam\source\repos\3rd september-2\operators\obj\Debug\operators.csprojAssemblyReference.cache
+C:\Users\venu.kalam\source\repos\3rd september-2\operators\obj\Debug\operators.csproj.CoreCompileInputs.cache
+C:\Users\venu.kalam\source\repos\3rd september-2\operators\obj\Debug\operators.exe
+C:\Users\venu.kalam\source\repos\3rd september-2\operators\obj\Debug\operators.pdb

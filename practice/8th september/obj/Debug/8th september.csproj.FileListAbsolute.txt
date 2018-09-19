@@ -1,0 +1,2 @@
+C:\Users\venu.kalam\source\repos\practice\8th september\obj\Debug\8th september.csprojAssemblyReference.cache
+C:\Users\venu.kalam\source\repos\practice\8th september\obj\Debug\8th september.csproj.CoreCompileInputs.cache

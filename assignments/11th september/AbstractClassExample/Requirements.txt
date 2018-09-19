@@ -1,0 +1,7 @@
+﻿abstract employee class
+id
+name
+salary
+staff class
+manager class
+sales manager class

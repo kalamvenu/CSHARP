@@ -1,0 +1,7 @@
+C:\Users\venu.kalam\source\repos\3rd september\strings and operators\bin\Debug\strings and operators.exe.config
+C:\Users\venu.kalam\source\repos\3rd september\strings and operators\bin\Debug\strings and operators.exe
+C:\Users\venu.kalam\source\repos\3rd september\strings and operators\bin\Debug\strings and operators.pdb
+C:\Users\venu.kalam\source\repos\3rd september\strings and operators\obj\Debug\strings and operators.csprojAssemblyReference.cache
+C:\Users\venu.kalam\source\repos\3rd september\strings and operators\obj\Debug\strings and operators.csproj.CoreCompileInputs.cache
+C:\Users\venu.kalam\source\repos\3rd september\strings and operators\obj\Debug\strings and operators.exe
+C:\Users\venu.kalam\source\repos\3rd september\strings and operators\obj\Debug\strings and operators.pdb

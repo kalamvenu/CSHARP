@@ -1,0 +1,7 @@
+C:\Users\venu.kalam\source\repos\assignments\10th september\bin\Debug\10th september.exe.config
+C:\Users\venu.kalam\source\repos\assignments\10th september\bin\Debug\10th september.exe
+C:\Users\venu.kalam\source\repos\assignments\10th september\bin\Debug\10th september.pdb
+C:\Users\venu.kalam\source\repos\assignments\10th september\obj\Debug\10th september.csprojAssemblyReference.cache
+C:\Users\venu.kalam\source\repos\assignments\10th september\obj\Debug\10th september.csproj.CoreCompileInputs.cache
+C:\Users\venu.kalam\source\repos\assignments\10th september\obj\Debug\10th september.exe
+C:\Users\venu.kalam\source\repos\assignments\10th september\obj\Debug\10th september.pdb

@@ -1,0 +1,7 @@
+C:\Users\venu.kalam\source\repos\4rth septembher\arrays and loops\bin\Debug\arrays and loops.exe.config
+C:\Users\venu.kalam\source\repos\4rth septembher\arrays and loops\bin\Debug\arrays and loops.exe
+C:\Users\venu.kalam\source\repos\4rth septembher\arrays and loops\bin\Debug\arrays and loops.pdb
+C:\Users\venu.kalam\source\repos\4rth septembher\arrays and loops\obj\Debug\4rth september.csproj.CoreCompileInputs.cache
+C:\Users\venu.kalam\source\repos\4rth septembher\arrays and loops\obj\Debug\arrays and loops.exe
+C:\Users\venu.kalam\source\repos\4rth septembher\arrays and loops\obj\Debug\arrays and loops.pdb
+C:\Users\venu.kalam\source\repos\4rth septembher\arrays and loops\obj\Debug\4rth september.csprojAssemblyReference.cache
