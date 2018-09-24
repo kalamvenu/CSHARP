@@ -11,7 +11,15 @@ namespace September22
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Context.User.IsInRole("Order"))
+            {
+               
+            }
 
+            else
+            {
+                Response.Redirect("/Account/Lockout");
+            }
         }
     }
 }
