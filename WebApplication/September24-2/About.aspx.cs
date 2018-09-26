@@ -83,7 +83,7 @@ namespace September24_2
                 HyperLink Update = new HyperLink();
 
                 Update.Text = "UPDATE";
-                Update.NavigateUrl = "Update.aspx?Id=" + P.Id;
+                Update.NavigateUrl = "Update.aspx?Id="+P.Id+"&Name="+ P.Name+ "&Price="+ P.Price+ "&URL="+ P.URL+"&Description=" + P.Description;
 
 
                 HyperLink Delete = new HyperLink();

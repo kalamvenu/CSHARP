@@ -9,13 +9,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 
             <asp:TextBox ID="TextBox1" runat="server">Name</asp:TextBox>
             <asp:TextBox ID="TextBox2" runat="server">Price</asp:TextBox>
             <asp:TextBox ID="TextBox3" runat="server">URL</asp:TextBox>
             <asp:TextBox ID="TextBox4" runat="server">Description</asp:TextBox>
 
-            <asp:Button ID="Button1" runat="server" Text="Button" />
+            <asp:Button ID="Button1" runat="server" Text="Button" onclick="Button1_Click" />
 
             <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
         </div>

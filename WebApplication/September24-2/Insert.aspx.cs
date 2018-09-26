@@ -24,8 +24,8 @@ namespace September24_2
             int Price = Convert.ToInt32(TextBox2.Text);
             string URL = TextBox3.Text;
 
-
-          //  int s = Convert.ToInt32(Request.QueryString["Id"]);
+         
+            //  int s = Convert.ToInt32(Request.QueryString["Id"]);
 
 
 
@@ -61,10 +61,10 @@ namespace September24_2
 
 
             }
+            Label1.Text = "Insertion Successful";
 
-            HyperLink InsertText = new HyperLink();
-            InsertText.Text = "insertion succesfull";
-            InsertText.NavigateUrl = "ProductDetails.aspx";
+           // Response.Redirect("About.aspx");
+            Response.AddHeader("REFRESH", "1;URL=About.aspx");
         }
     }
 }

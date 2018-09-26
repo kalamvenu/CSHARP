@@ -17,6 +17,8 @@
             <asp:Button ID="Button1" runat="server" Text="Insert" OnClick="Button1_Click" />
 
             <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+
+            <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
     </form>
 </body>

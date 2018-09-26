@@ -15,6 +15,21 @@ namespace September24_2
         protected void Page_Load(object sender, EventArgs e)
         {
 
+          
+
+            string NameQ = Request.QueryString["Name"];
+
+           // TextBox1.Text = NameQ;
+            string PriceQ = Request.QueryString["Price"].ToString();
+           // TextBox2.Text = PriceQ.ToString(); ;
+
+            string URLQ = Request.QueryString["URL"];
+           // TextBox3.Text = URLQ;
+            string DescriptionQ = Request.QueryString["Description"];
+          //  TextBox4.Text = DescriptionQ;
+
+            Label1.Text = Request.QueryString["Id"]+ NameQ+ PriceQ+ URLQ+ DescriptionQ;
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -27,8 +42,9 @@ namespace September24_2
             string Description = TextBox4.Text;
 
 
-
             int IdQ = Convert.ToInt32(Request.QueryString["Id"]);
+
+
 
 
 
@@ -67,8 +83,9 @@ namespace September24_2
               
             }
 
-            Label label = new Label();
-            label.Text = "updated";
+            Label1.Text = "Updated";
+
+            Response.AddHeader("REFRESH", "1;URL=About.aspx");
 
         }
     }

@@ -14,6 +14,16 @@ namespace September24_2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Label1.Text = "do you want to delete the record";
+
+
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+
             int s = Convert.ToInt32(Request.QueryString["Id"]);
 
 
@@ -46,12 +56,14 @@ namespace September24_2
 
                 myCommand.ExecuteNonQuery();
 
-               
 
-              
+
+
             }
-            Label label = new Label();
-            label.Text = "deletion successful";
+
+            Label1.Text = "Deleted";
+
+            Response.AddHeader("REFRESH", "1;URL=About.aspx");
         }
     }
 }
