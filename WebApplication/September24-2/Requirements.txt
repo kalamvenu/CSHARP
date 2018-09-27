@@ -1,0 +1,133 @@
+﻿           
+
+		   code from about page
+		   //string strcon = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
+
+            //using (SqlConnection connection = new SqlConnection())
+            //{
+            //    connection.ConnectionString = strcon;
+            //    connection.Open();
+
+            //    SqlCommand myCommand = new SqlCommand("RtriveAllDataToPerformOperations",connection);
+
+            //    myCommand.CommandType = CommandType.StoredProcedure;
+
+            //    myCommand.Parameters.AddWithValue("@Action", "SELECT");
+
+            //    using (SqlDataReader myDataReader = myCommand.ExecuteReader())
+            //    {
+
+            //        while (myDataReader.Read())
+            //        {
+
+            //            //ProductList.Add(new Product
+            //            //{
+
+            //            //    Id = Convert.ToInt32(myDataReader["Id"].ToString()),
+            //            //    Name = myDataReader["Name"].ToString(),
+            //            //    Price = Convert.ToInt32(myDataReader["Price"].ToString()),
+
+            //            //    URL = myDataReader["URL"].ToString(),
+
+            //            //    Description = myDataReader["Description"].ToString()
+
+            //            //});
+
+            //        }
+            //    }
+
+
+
+            //}
+
+
+			from product details page
+
+			            //string strcon = "Data Source = PC-112; Initial Catalog = ECommerce; Integrated Security = True";
+
+            //using (SqlConnection connection = new SqlConnection())
+            //{
+            //    connection.ConnectionString = strcon;
+            //    connection.Open();
+
+            //    SqlCommand myCommand = new SqlCommand("RetriveDataToPerformOperation", connection);
+
+            //    myCommand.CommandType = CommandType.StoredProcedure;
+
+            //    //myCommand.Parameters.AddWithValue("@Action", "SELECTONE");
+            //    //myCommand.Parameters.AddWithValue("@Id", s);
+
+            //    myCommand.Parameters.Add("@Action", SqlDbType.VarChar, 20).Value = "SELECTONE";
+            //    myCommand.Parameters.Add("@Id", SqlDbType.Int, 20).Value = s;
+
+            //    //SqlParameter param;
+            //    //param = new SqlParameter
+            //    //{
+            //    //    ParameterName = "@petName",
+            //    //    SqlDbType = SqlDbType.Char,
+            //    //    Size = 10,
+            //    //    Direction = ParameterDirection.Output
+            //    //};
+
+
+            //    using (SqlDataReader myDataReader = myCommand.ExecuteReader())
+            //    {
+
+            //        if (myDataReader.Read()) { 
+
+			
+
+
+			from preview page
+            string strcon = "Data Source = PC-112; Initial Catalog = ECommerce; Integrated Security = True";
+
+            using (SqlConnection connection = new SqlConnection())
+            {
+                connection.ConnectionString = strcon;
+                connection.Open();
+
+                SqlCommand myCommand = new SqlCommand("RetriveDataToPerformOperation", connection);
+
+                myCommand.CommandType = CommandType.StoredProcedure;
+
+                //myCommand.Parameters.AddWithValue("@Action", "SELECTONE");
+                //myCommand.Parameters.AddWithValue("@Id", s);
+
+                myCommand.Parameters.Add("@Action", SqlDbType.VarChar, 20).Value = "SELECTONE";
+                myCommand.Parameters.Add("@Id", SqlDbType.Int, 20).Value = s;
+
+                //SqlParameter param;
+                //param = new SqlParameter
+                //{
+                //    ParameterName = "@petName",
+                //    SqlDbType = SqlDbType.Char,
+                //    Size = 10,
+                //    Direction = ParameterDirection.Output
+                //};
+
+
+                using (SqlDataReader myDataReader = myCommand.ExecuteReader())
+                {
+
+                    if (myDataReader.Read())
+                    {
+
+                        int Id = Convert.ToInt32(myDataReader["Id"].ToString());
+                        string Name = myDataReader["Name"].ToString();
+                        int Price = Convert.ToInt32(myDataReader["Price"].ToString());
+                        string Description = myDataReader["Description"].ToString();
+
+                        Image image = new Image();
+                        image.ImageUrl = myDataReader["URL"].ToString();
+                        image.Width = 113;
+                        image.Height = 87;
+
+                        PlaceHolder1.Controls.Add(image);
+                        Label label = new Label();
+                        label.Text = Id + "  " + Name + "   " + Price + "   " + Description;
+                        PlaceHolder1.Controls.Add(label);
+                    }
+
+
+                }
+            }

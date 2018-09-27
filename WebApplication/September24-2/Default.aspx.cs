@@ -17,9 +17,11 @@ namespace September24_2
 
             List<Product> List = new List<Product>();
 
-            Repositorycss Repo = new Repositorycss();
+          
 
-            List = Repo.GetallProducts();
+            GetAllProducts getAllProducts = new GetAllProducts();
+
+            List = getAllProducts.GetallProductsMethod();
 
             Table tb = new Table();
             tb.BorderWidth = 3;
@@ -30,44 +32,39 @@ namespace September24_2
 
             TableRow tr = new TableRow();
 
-            foreach (Product P in List)
+                 foreach (Product P in List)
                  {
 
-               
+                      tb.Rows.Add(tr);
 
-                tb.Rows.Add(tr);
+                      TableCell tc1 = new TableCell();
+                 
+                      Image image = new Image();
+                      image.ImageUrl = P.URL;
+                      image.Width = 250;
+                      image.Height = 150;
+                      HyperLink HL = new HyperLink();
+                      String name = P.Name;
+                      HL.Text = P.Name;
+                      HL.ID = P.Id.ToString();
+                      HL.NavigateUrl = "ProductDetails.aspx?Id="+ P.Id;
 
-                TableCell tc1 = new TableCell();
+                      tc1.Controls.Add(image);
+                      tc1.Controls.Add(HL);
 
-                Image image = new Image();
-                image.ImageUrl = P.URL;
-                  image.Width = 250;
-                  image.Height = 150;
-                HyperLink HL = new HyperLink();
-                String name = P.Name;
-               HL.Text = P.Name;
-                HL.ID = P.Id.ToString();
-              HL.NavigateUrl = "ProductDetails.aspx?Id="+ P.Id;
+                      tr.Cells.Add(tc1);
+                      LengthOfList++;
 
-                tc1.Controls.Add(image);
-                tc1.Controls.Add(HL);
+                      if(LengthOfList%2 == 0)
+                      {
+                           tr = new TableRow();
+                      }
+                 }
 
-                tr.Cells.Add(tc1);
-                LengthOfList++;
-
-                if(LengthOfList%2 == 0)
-                {
-                    tr = new TableRow();
-                }
-                }
-
-            PlaceHolder1.Controls.Add(tb);
+                 PlaceHolder1.Controls.Add(tb);
         }
             
         
-
-
-
 
 
 
@@ -77,9 +74,10 @@ namespace September24_2
 
             List<Product> SList = new List<Product>();
 
-            Repositorycss SRepo = new Repositorycss();
+           SearchEngine searchEngine = new SearchEngine();
 
-            SList = SRepo.SearchEngine(Search);
+
+            SList = searchEngine.SearchEngineMethod(Search);
 
             Table Stb = new Table();
             Stb.BorderWidth = 3;

@@ -55,13 +55,13 @@
 
                         <li><% if (Context.User.IsInRole("Product"))
                             {%>
-                            <a runat="server" href="~/About">Product Management Page</a>
+                            <a runat="server" href="~/Product">Product Management Page</a>
 
                             <%}%>
                         </li>
                          <% if (Context.User.IsInRole("Order"))
                             {%>
-                        <li><a runat="server" href="~/Contact">Order Management Page</a>
+                        <li><a runat="server" href="~/Order">Order Management Page</a>
                             <%}%>
 
                         </li>

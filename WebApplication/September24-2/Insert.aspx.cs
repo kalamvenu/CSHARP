@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using Repository.Repositories;
+using Repository.Products;
 
 namespace September24_2
 {
@@ -14,7 +16,14 @@ namespace September24_2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            GetAllBrands brands = new GetAllBrands();
+
+            List<Brands> brandsList = brands.GetallBrandsMethod();
+
+            foreach (Brands B in brandsList)
+            {
+                DropDownList1.Items.Add(new ListItem(B.BrandName, B.BrandId.ToString()));
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -23,48 +32,22 @@ namespace September24_2
             string Name = TextBox1.Text;
             int Price = Convert.ToInt32(TextBox2.Text);
             string URL = TextBox3.Text;
+            string Action = "insert".ToUpper();
+            string Description = TextBox4.Text;
+            int BrandId = DropDownList1.SelectedIndex;
+            string BrandName = DropDownList1.SelectedItem.Value;
 
-         
             //  int s = Convert.ToInt32(Request.QueryString["Id"]);
 
+            ManipulateProducts manipulateProducts = new ManipulateProducts();
+
+            manipulateProducts.ManipulateIndividualProductMethod(Action,Name,Price,URL,Description,BrandId);
 
 
-            string strcon = "Data Source=PC-112;Initial Catalog=ECommerce;Integrated Security=True";
-
-            using (SqlConnection connection = new SqlConnection())
-            {
-                connection.ConnectionString = strcon;
-                connection.Open();
-
-                SqlCommand myCommand = new SqlCommand("RetriveDataToPerformOperation", connection);
-
-                myCommand.CommandType = CommandType.StoredProcedure;
-
-                //myCommand.Parameters.AddWithValue("@Action", "SELECTONE");
-                //myCommand.Parameters.AddWithValue("@Id", s);
-
-                myCommand.Parameters.Add("@Action", SqlDbType.VarChar, 20).Value = "INSERT";
-                myCommand.Parameters.Add("@Name", SqlDbType.VarChar, 50).Value = Name;
-                myCommand.Parameters.Add("@Price", SqlDbType.Int, 50).Value = Price;
-                myCommand.Parameters.Add("@URL", SqlDbType.VarChar, 50).Value = URL;
-
-                //SqlParameter param;
-                //param = new SqlParameter
-                //{
-                //    ParameterName = "@petName",
-                //    SqlDbType = SqlDbType.Char,
-                //    Size = 10,
-                //    Direction = ParameterDirection.Output
-                //};
-
-                myCommand.ExecuteNonQuery();
-
-
-            }
             Label1.Text = "Insertion Successful";
 
            // Response.Redirect("About.aspx");
-            Response.AddHeader("REFRESH", "1;URL=About.aspx");
+            Response.AddHeader("REFRESH", "1;URL=Product.aspx");
         }
     }
 }
