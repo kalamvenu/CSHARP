@@ -4,9 +4,9 @@
     <h3>product</h3>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
+    <asp:PlaceHolder ID="PlaceHolderforInsertButton" runat="server"></asp:PlaceHolder>
 
-    <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+    <asp:PlaceHolder ID="PlaceHolderforProductTable" runat="server"></asp:PlaceHolder>
 
 
 

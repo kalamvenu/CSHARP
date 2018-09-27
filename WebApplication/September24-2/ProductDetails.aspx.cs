@@ -40,13 +40,13 @@ namespace September24_2
 
                 Image image = new Image();
                 image.ImageUrl = P.URL;
-                image.Width = 250;
-                image.Height = 150;
+                image.Width = 350;
+                image.Height = 250;
 
-                PlaceHolder1.Controls.Add(image);
+                PlaceHolderforProductDetails.Controls.Add(image);
                 Label label = new Label();
-                label.Text = Id + "  " + Name + "   " + Price + "   " + Description;
-                PlaceHolder1.Controls.Add(label);
+                label.Text = "<br/>Id = " + Id + "<br/>Name = " + Name + "<br/>Price =   " + Price + "<br/>Description =   " + Description;
+                PlaceHolderforProductDetails.Controls.Add(label);
             }
 
 

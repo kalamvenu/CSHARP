@@ -43,7 +43,7 @@ namespace September24_2
             Insert.Text = "INSERT";
             Insert.NavigateUrl = "Insert.aspx";
 
-            PlaceHolder2.Controls.Add(Insert);
+            PlaceHolderforInsertButton.Controls.Add(Insert);
 
            
             Table tb = new Table();
@@ -102,10 +102,11 @@ namespace September24_2
                 if (LengthOfList % 2 == 0)
                 {
                     tr = new TableRow();
+                    
                 }
             }
 
-            PlaceHolder1.Controls.Add(tb);
+            PlaceHolderforProductTable.Controls.Add(tb);
 
 
         }

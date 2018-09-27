@@ -11,11 +11,9 @@
         <div>
 
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-            <asp:Button ID="Button1" runat="server" Text="YES" OnClick="Button1_Click" />
+            <asp:Button ID="DeleteConformbtn" runat="server" Text="YES" OnClick="Button1_Click" />
 
-            <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
-
-             
+          
         </div>
        
     </form>

@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
            
-            <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+            <asp:PlaceHolder ID="PlaceHolderforProductDetails" runat="server"></asp:PlaceHolder>
          
         </div>
     </form>

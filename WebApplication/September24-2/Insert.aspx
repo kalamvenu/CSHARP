@@ -10,15 +10,13 @@
     <form id="form1" runat="server">
         <div>
 
-            <asp:TextBox ID="TextBox1" runat="server">Name</asp:TextBox><br />
-            <asp:TextBox ID="TextBox2" runat="server">Price</asp:TextBox><br />
-            <asp:TextBox ID="TextBox3" runat="server">URL</asp:TextBox><br />
-            <asp:TextBox ID="TextBox4" runat="server">Description</asp:TextBox><br />
-            <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+            <asp:TextBox ID="NameTextBox" runat="server">Name</asp:TextBox><br />
+            <asp:TextBox ID="PriceTextBox" runat="server">Price</asp:TextBox><br />
+            <asp:TextBox ID="URLTextBox" runat="server">URL</asp:TextBox><br />
+            <asp:TextBox ID="DescriptionTextBox" runat="server">Description</asp:TextBox><br />
+            <asp:DropDownList ID="DropDownListforBrands" runat="server"></asp:DropDownList>
 
-            <asp:Button ID="Button1" runat="server" Text="Insert" OnClick="Button1_Click" />
-
-            <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+            <asp:Button ID="Insertbtn" runat="server" Text="Insert" OnClick="Button1_Click" />
 
             <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>

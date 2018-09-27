@@ -10,17 +10,17 @@
          <div class="col-md-4">
 
  
-            <a runat="server" href="~/About">Product Management page</a>
+            <a runat="server" href="~/Product">Product Management page</a>
            
         </div>
         <div class="col-md-4">
            
             <p>
-                <a runat="server" href="~/Contact">Order Management page</a></p>
+                <a runat="server" href="~/Order">Order Management page</a></p>
             <p>
-                &nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                &nbsp;<asp:TextBox ID="Searchbox" runat="server"></asp:TextBox>
 
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Search" />
+                <asp:Button ID="Searchbtn" runat="server" OnClick="Button1_Click" Text="Search" />
             </p>
            
         </div>
@@ -28,12 +28,12 @@
    
  
          </div>
-                <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+                <asp:PlaceHolder ID="PlaceHolderforDefaultDisplay" runat="server">
 
                        <div class="row">
 
       
-                    <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
+                    <asp:PlaceHolder ID="PlaceHolderforSearch" runat="server"></asp:PlaceHolder>
                              </div>
 
    <%-- <asp:Image ID="Image1" runat="server" style="width: 113px; height: 87px"/><br />

@@ -41,8 +41,8 @@ namespace September24_2
                  
                       Image image = new Image();
                       image.ImageUrl = P.URL;
-                      image.Width = 250;
-                      image.Height = 150;
+                      image.Width = 350;
+                      image.Height = 250;
                       HyperLink HL = new HyperLink();
                       String name = P.Name;
                       HL.Text = P.Name;
@@ -50,6 +50,7 @@ namespace September24_2
                       HL.NavigateUrl = "ProductDetails.aspx?Id="+ P.Id;
 
                       tc1.Controls.Add(image);
+                        
                       tc1.Controls.Add(HL);
 
                       tr.Cells.Add(tc1);
@@ -61,7 +62,7 @@ namespace September24_2
                       }
                  }
 
-                 PlaceHolder1.Controls.Add(tb);
+                 PlaceHolderforDefaultDisplay.Controls.Add(tb);
         }
             
         
@@ -70,7 +71,7 @@ namespace September24_2
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string Search = TextBox1.Text;
+            string Search = Searchbox.Text;
 
             List<Product> SList = new List<Product>();
 
@@ -92,16 +93,16 @@ namespace September24_2
 
                 Image image = new Image();
                 image.ImageUrl = P.URL;
-                image.Width = 113;
-                image.Height = 87;
+                image.Width = 250;
+                image.Height = 150;
                 HyperLink HL = new HyperLink();
                 String name = P.Name;
                 HL.Text = P.Name;
                 HL.ID = P.Id.ToString();
                 HL.NavigateUrl = "ProductDetails.aspx?Id=" + P.Id;
 
-                PlaceHolder2.Controls.Add(image);
-                PlaceHolder2.Controls.Add(HL);
+                PlaceHolderforSearch.Controls.Add(image);
+                PlaceHolderforSearch.Controls.Add(HL);
 
                 Str.Cells.Add(Stc1);
 

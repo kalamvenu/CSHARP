@@ -22,20 +22,20 @@ namespace September24_2
 
             foreach (Brands B in brandsList)
             {
-                DropDownList1.Items.Add(new ListItem(B.BrandName, B.BrandId.ToString()));
+                DropDownListforBrands.Items.Add(new ListItem(B.BrandName, B.BrandId.ToString()));
             }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            string Name = TextBox1.Text;
-            int Price = Convert.ToInt32(TextBox2.Text);
-            string URL = TextBox3.Text;
+            string Name = NameTextBox.Text;
+            int Price = Convert.ToInt32(PriceTextBox.Text);
+            string URL = URLTextBox.Text;
             string Action = "insert".ToUpper();
-            string Description = TextBox4.Text;
-            int BrandId = DropDownList1.SelectedIndex;
-            string BrandName = DropDownList1.SelectedItem.Value;
+            string Description = DescriptionTextBox.Text;
+            int BrandId = DropDownListforBrands.SelectedIndex;
+            string BrandName = DropDownListforBrands.SelectedItem.Value;
 
             //  int s = Convert.ToInt32(Request.QueryString["Id"]);
 

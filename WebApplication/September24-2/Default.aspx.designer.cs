@@ -13,39 +13,39 @@ namespace September24_2 {
     public partial class _Default {
         
         /// <summary>
-        /// TextBox1 control.
+        /// Searchbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox Searchbox;
         
         /// <summary>
-        /// Button1 control.
+        /// Searchbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Searchbtn;
         
         /// <summary>
-        /// PlaceHolder1 control.
+        /// PlaceHolderforDefaultDisplay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderforDefaultDisplay;
         
         /// <summary>
-        /// PlaceHolder2 control.
+        /// PlaceHolderforSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder2;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderforSearch;
     }
 }

@@ -24,21 +24,21 @@ namespace September24_2
 
             foreach (Brands B in brandsList)
             {
-                DropDownList1.Items.Add(new ListItem(B.BrandName, B.BrandId.ToString()));
+                DropDownListforBrands.Items.Add(new ListItem(B.BrandName, B.BrandId.ToString()));
             }
 
             if (!IsPostBack)
             {
                 string NameQ = Request.QueryString["Name"];
 
-                TextBox1.Text = NameQ;
+                NameTextBox.Text = NameQ;
                 int PriceQ = Convert.ToInt32(Request.QueryString["Price"]);
-                TextBox2.Text = PriceQ.ToString(); ;
+                PriceTextBox.Text = PriceQ.ToString(); ;
 
                 string URLQ = Request.QueryString["URL"];
-                TextBox3.Text = URLQ;
+                URLTextBox.Text = URLQ;
                 string DescriptionQ = Request.QueryString["Description"];
-                TextBox4.Text = DescriptionQ;
+                DescriptionTextBox.Text = DescriptionQ;
 
                // Label1.Text = Request.QueryString["Id"]+ NameQ+ PriceQ+ URLQ+ DescriptionQ;
             }
@@ -48,15 +48,15 @@ namespace September24_2
         {
 
             
-            string Name = TextBox1.Text;
-            int Price = Convert.ToInt32(TextBox2.Text);
-            string URL = TextBox3.Text;
-            string Description = TextBox4.Text;
+            string Name = NameTextBox.Text;
+            int Price = Convert.ToInt32(PriceTextBox.Text);
+            string URL = URLTextBox.Text;
+            string Description = DescriptionTextBox.Text;
 
             string Action = "update".ToUpper();
             int IdQ = Convert.ToInt32(Request.QueryString["Id"]);
-            int BrandId = DropDownList1.SelectedIndex;
-            string BrandName = DropDownList1.SelectedItem.Value;
+            int BrandId = DropDownListforBrands.SelectedIndex;
+            string BrandName = DropDownListforBrands.SelectedItem.Value;
 
             ManipulateProducts manipulateProducts = new ManipulateProducts();
 

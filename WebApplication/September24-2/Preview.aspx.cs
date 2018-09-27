@@ -42,10 +42,10 @@ namespace September24_2
                 image.Width = 250;
                 image.Height = 150;
 
-                PlaceHolder1.Controls.Add(image);
+                PlaceHolderforPreview.Controls.Add(image);
                 Label label = new Label();
-                label.Text = Id + "  " + Name + "   " + Price + "   " + Description;
-                PlaceHolder1.Controls.Add(label);
+                label.Text = "<br/>Id = "+Id + "  " + "<br/>Name = " + Name + "   " + "<br/>Price = " + Price + "   " + "<br/>Description = " + Description;
+                PlaceHolderforPreview.Controls.Add(label);
             }
         }
         
