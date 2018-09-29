@@ -23,7 +23,7 @@ namespace NHUB
             List<ServiceLine> List = new List<ServiceLine>();
 
 
-            GetAllServiceLines getAllProducts = new GetAllServiceLines();
+            GetAllServiceLinesDAL getAllProducts = new GetAllServiceLinesDAL();
 
             List = getAllProducts.GetAllServiceLinesMethod();
 
@@ -59,7 +59,7 @@ namespace NHUB
                 HyperLink Delete = new HyperLink();
 
                 Delete.Text = "&nbsp;&nbsp;DELETE";
-                Delete.NavigateUrl = "DeleteServiceLine.aspx?Id=" + P.Id;
+                Delete.NavigateUrl = "DeleteServiceLine.aspx?Id=" + P.Id + "&Name=" + P.Name;
 
                 tableCell.Controls.Add(ServiceLabel);
                 tableCell.Controls.Add(Edit);
@@ -78,6 +78,7 @@ namespace NHUB
 
         protected void AddServiceLine_Click(object sender, EventArgs e)
         {
+
             Response.Redirect("AddServiceLine.aspx");
 
         }

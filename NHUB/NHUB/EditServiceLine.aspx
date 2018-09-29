@@ -47,8 +47,8 @@
                 </tr>
             </table>
         </div>
-        <asp:Button ID="CancelButton" runat="server" Text="Cancel" />
-        <asp:Button ID="UpdateButton" runat="server" Text="Update" />
+        <asp:Button ID="CancelButton" runat="server" Text="Cancel" OnClick="CancelButton_Click" />
+        <asp:Button ID="UpdateButton" runat="server" Text="Update" OnClick="UpdateButton_Click" />
     </form>
 </body>
 </html>
