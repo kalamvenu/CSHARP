@@ -19,29 +19,31 @@ namespace NHUB
             }
 
 
-
-            List<Users> List = new List<Users>();
-
+            List<Users> ListForDisplaying = new List<Users>();
 
             GetAllUsersDAL getAllUsers = new GetAllUsersDAL();
 
-            List = getAllUsers.GetAllUsersMethod();
+            ListForDisplaying = getAllUsers.GetAllUsersMethod();
 
-            
 
-            foreach (Users B in List)
+           foreach (Users UsersCount in ListForDisplaying)
             {
-                AddServiceLineListBox.Items.Add(new ListItem(B.UserName,B.Id.ToString()));
+                 AddServiceLineListBox.Items.Add(new ListItem(UsersCount.UserName,UsersCount.Id.ToString()));
+     
             }
 
-
+            
         }
 
         protected void CreateButton_Click(object sender, EventArgs e)
         {
 
             string NameSend = NameTextBox.Text;
+
             int IdSent;
+
+
+            // to enter the name of the service line
 
             CreateServiceLineDAL createServiceLine = new CreateServiceLineDAL();
 
@@ -49,11 +51,27 @@ namespace NHUB
 
             int ServiceLineIdSend = IdSent;
 
-            string UserIdSend = AddServiceLineListBox.SelectedValue;
+            // selevterd items in list storing 
+
+            List<string> SelectedValuesForCollectingUserId = new List<string>();
+
+            //  string UserIdSend = AddServiceLineListBox.SelectedValue;
+            
+            foreach (ListItem item in AddServiceLineListBox.Items)
+            {
+                
+                if (item.Selected)
+                {
+                    SelectedValuesForCollectingUserId.Add(item.Value);
+
+                }
+            }
+
+            //to enter the names of users into the foriegn table with the string userid
 
             AddServiceLineManagerDAL addServiceLineManager = new AddServiceLineManagerDAL();
 
-            addServiceLineManager.AddServiceLineManagerMethod(ServiceLineIdSend, UserIdSend);
+            addServiceLineManager.AddServiceLineManagerMethod(ServiceLineIdSend, SelectedValuesForCollectingUserId);
 
 
             Response.AddHeader("REFRESH", "1;URL=ServiceLines.aspx");

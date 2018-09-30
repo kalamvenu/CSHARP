@@ -20,7 +20,7 @@ namespace NHUB
 
             Label DisplayName = new Label
             {
-                Text = "are you sure you want to delete   " + Name
+                Text = "are you sure you want to delete      " + Name
             };
 
             DeleteServiceLinePlaceHolder.Controls.Add(DisplayName);

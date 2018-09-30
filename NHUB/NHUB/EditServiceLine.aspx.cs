@@ -26,20 +26,20 @@ namespace NHUB
 
             EditServiceLineTextBox.Text = Name;
 
-            List<ServiceLine> List = new List<ServiceLine>();
+            List<Users> ListToDisplayInEditServiceLine = new List<Users>();
 
 
             EditServiceLineManagerDAL editServiceLineManager = new EditServiceLineManagerDAL();
 
-            List = editServiceLineManager.EditServiceLineManagerMethod(Id);
+            ListToDisplayInEditServiceLine = editServiceLineManager.EditServiceLineManagerMethod(Id);
 
 
 
-            foreach (ServiceLine B in List)
+            foreach (Users es in ListToDisplayInEditServiceLine)
             {
-                EditServiceLineListBox.Items.Add(new ListItem(B.Name, B.Id.ToString()));
+                EditServiceLineListBox.Items.Add(new ListItem(es.UserName, es.Id.ToString()));
+               
             }
-
 
         }
 
@@ -53,13 +53,33 @@ namespace NHUB
            // string NameSend = EditServiceLineTextBox.Text;
             
 
-            int Id = Convert.ToInt32(Request.QueryString["Id"]);
+            int ServiceLineId = Convert.ToInt32(Request.QueryString["Id"]);
 
-            string Name = Request.QueryString["Name"];
+            // string Name = Request.QueryString["Name"];
+
+            List<string> SelectedValuesUserIdForUpdate = new List<string>();
+
+            //  string UserIdSend = AddServiceLineListBox.SelectedValue;
+            //string UserId = EditServiceLineListBox.SelectedValue;
+
+            foreach (ListItem item in EditServiceLineListBox.Items)
+            {
+
+                if (item.Selected)
+                {
+                    SelectedValuesUserIdForUpdate.Add(item.Value);
+
+                }
+            }
+
+            
 
             UpdateServiceLineDAL updateServiceLineDAL  = new UpdateServiceLineDAL();
 
-            updateServiceLineDAL.UpdateServiceLineMethod(Name,Id);
+            updateServiceLineDAL.UpdateServiceLineMethod(SelectedValuesUserIdForUpdate, ServiceLineId);
+
+            UpdateandDelete updateandDelete = new UpdateandDelete();
+            updateandDelete.UpdateServiceLineMethod(SelectedValuesUserIdForUpdate, ServiceLineId);
 
             Response.AddHeader("REFRESH", "1;URL=ServiceLines.aspx");
 

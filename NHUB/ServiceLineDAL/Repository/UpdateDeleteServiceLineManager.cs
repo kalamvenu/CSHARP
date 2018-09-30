@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace ServiceLineDAL.Repository
 {
-    public class UpdateServiceLineDAL
+    public class UpdateDeleteServiceLineManager
     {
-
-
-        public void UpdateServiceLineMethod( List<string> NameSent,int SendId)
+        public void UpdateServiceLineMethod(List<string> NameSent, int SendId)
         {
 
             //string UserId = NameSent;
@@ -29,16 +27,21 @@ namespace ServiceLineDAL.Repository
                 connection.ConnectionString = strcon;
                 connection.Open();
 
-                string sql = "delete from ServiceLineManager WHERE ServiceLineId = @Action1";
+                foreach (string Count in ReceivedName)
+                {
 
-                SqlCommand myCommand = new SqlCommand(sql, connection);
+                    string sql = "INSERT INTO OperationManager (ServiceLineId,OperationManagerId) VALUES(@Action1,@Action2)";
 
-                myCommand.Parameters.Add("@Action1", SqlDbType.Int, 50).Value = Id;
+                    SqlCommand myCommand = new SqlCommand(sql, connection);
 
-                myCommand.ExecuteNonQuery();             
+                    myCommand.Parameters.Add("@Action1", SqlDbType.Int, 50).Value = Id;
+                    myCommand.Parameters.Add("@Action2", SqlDbType.VarChar, 200).Value = Count;
+                    myCommand.ExecuteNonQuery();
+                }
 
             }
 
         }
+
     }
 }

@@ -48,10 +48,14 @@
     <Compile Include="Repository\AddServiceLineManagerDAL.cs" />
     <Compile Include="Repository\CreateServiceLineDAL.cs" />
     <Compile Include="Repository\DeleteServiceLineDAL.cs" />
+    <Compile Include="Repository\EditServiceLineForServiceLineManager.cs" />
     <Compile Include="Repository\EditServiceLineManagerDAL.cs" />
     <Compile Include="Repository\GetAllServiceLinesDAL.cs" />
     <Compile Include="Repository\GetAllUsersDAL.cs" />
+    <Compile Include="Repository\UpdateandDelete.cs" />
+    <Compile Include="Repository\UpdateDeleteServiceLineManager.cs" />
     <Compile Include="Repository\UpdateServiceLineDAL.cs" />
+    <Compile Include="Repository\UpdateServiceLineServiceLineManager.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

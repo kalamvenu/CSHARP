@@ -58,6 +58,11 @@
                             <a runat="server" href="ServiceLines.aspx">Service lines</a>
                           <%}%>   
                         </li>
+                         <li><%if (Context.User.IsInRole("ServiceLineManager"))%>
+                           <%{%>                            
+                            <a runat="server" href="ServiceLinesForServiceManager.aspx">Service lines</a>
+                          <%}%>   
+                        </li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>

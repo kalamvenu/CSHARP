@@ -1,7 +1,6 @@
 ﻿using ServiceLineDAL.Models;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace ServiceLineDAL.Repository
 {
-    public class EditServiceLineManagerDAL
+    public class EditServiceLineForServiceLineManager
     {
-
         public List<Users> EditServiceLineManagerMethod(int IdSent)
         {
             int Id = IdSent;
@@ -23,11 +21,11 @@ namespace ServiceLineDAL.Repository
                  @"Data Source=PC-112;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
 
-                string sql = "select DISTINCT UserName,AspNetUsers.Id from AspNetUsers,ServiceLineManager where AspNetUsers.Id = UserId and ServiceLineId =" + Id;
+                string sql = "select distinct AspNetUsers.UserName,AspNetUsers.Id from OperationManager,AspNetUsers where OperationManager.ServicelineId =" + Id;
 
                 SqlCommand myCommand = new SqlCommand(sql, connection);
 
-               // myCommand.Parameters.Add("@Id", SqlDbType.Int, 50).Value = Id;
+                // myCommand.Parameters.Add("@Id", SqlDbType.Int, 50).Value = Id;
 
                 using (SqlDataReader myDataReader = myCommand.ExecuteReader())
                 {
@@ -37,7 +35,7 @@ namespace ServiceLineDAL.Repository
 
                         EditServiceLinesList.Add(new Users
                         {
-                            
+
                             Id = myDataReader["Id"].ToString(),
                             UserName = myDataReader["UserName"].ToString()
 
@@ -53,6 +51,5 @@ namespace ServiceLineDAL.Repository
             return EditServiceLinesList;
 
         }
-
     }
 }
