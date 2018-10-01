@@ -33,13 +33,39 @@ namespace NHUB
 
             ListToDisplayInEditServiceLine = editServiceLineManager.EditServiceLineManagerMethod(Id);
 
-
-
+            int LengthOfCount = 0;
+            
             foreach (Users es in ListToDisplayInEditServiceLine)
             {
                 EditServiceLineListBox.Items.Add(new ListItem(es.UserName, es.Id.ToString()));
-               
+
+                EditServiceLineListBox.Items[LengthOfCount].Selected = true;
+
+                LengthOfCount++;
+
             }
+
+
+            List<Users> ListForDisplaying = new List<Users>();
+
+            GetAllUsersDAL getAllUsers = new GetAllUsersDAL();
+
+            ListForDisplaying = getAllUsers.GetAllUsersMethod();
+
+          
+            foreach (Users UsersCount in ListForDisplaying)
+            {
+                            
+                //  if (!(EditServiceLineListBox.Items.Contains(UsersCount.UserName)))  
+                // if(EditServiceLineListBox.Items.ToString().Equals(UsersCount.Id.ToString()))              
+                EditServiceLineListBox.Items.Add(new ListItem(UsersCount.UserName, UsersCount.Id.ToString()));
+              
+            }
+               
+                
+            
+
+
 
         }
 

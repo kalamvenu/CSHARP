@@ -29,15 +29,34 @@ namespace NHUB
             List<Users> ListToDisplayInEditForSLM = new List<Users>();
 
 
-            EditServiceLineManagerDAL editServiceLineManager = new EditServiceLineManagerDAL();
+            EditServiceLineForServiceLineManager editServiceLineForServiceLineManager = new EditServiceLineForServiceLineManager();
 
-            ListToDisplayInEditForSLM = editServiceLineManager.EditServiceLineManagerMethod(Id);
+            ListToDisplayInEditForSLM = editServiceLineForServiceLineManager.EditServiceLineManagerMethod(Id);
 
-
+            int LengthOfCount = 0;
 
             foreach (Users es in ListToDisplayInEditForSLM)
             {
                 EditServiceLineListBoxForServiceManager.Items.Add(new ListItem(es.UserName, es.Id.ToString()));
+
+                EditServiceLineListBoxForServiceManager.Items[LengthOfCount].Selected = true;
+
+                LengthOfCount++;
+            }
+
+            List<Users> ListForDisplaying = new List<Users>();
+
+            GetAllUsersDAL getAllUsers = new GetAllUsersDAL();
+
+            ListForDisplaying = getAllUsers.GetAllUsersMethod();
+
+
+            foreach (Users UsersCount in ListForDisplaying)
+            {
+
+                //  if (!(EditServiceLineListBox.Items.Contains(UsersCount.UserName)))  
+                // if(EditServiceLineListBox.Items.ToString().Equals(UsersCount.Id.ToString()))              
+                EditServiceLineListBoxForServiceManager.Items.Add(new ListItem(UsersCount.UserName, UsersCount.Id.ToString()));
 
             }
 

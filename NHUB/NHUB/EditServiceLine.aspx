@@ -47,12 +47,14 @@
 
 
 
-                                     <script type="text/javascript">
-                                 $(function () {
+                 <script type="text/javascript">
+                  $(function () {
             $('#EditServiceLineListBox').multiselect({
                 includeSelectAllOption: true
+               });
+          
             });
-        });
+ 
     </script> 
                        
                         <asp:ListBox ID="EditServiceLineListBox" runat="server" SelectionMode="Multiple"></asp:ListBox>

@@ -21,7 +21,9 @@ namespace ServiceLineDAL.Repository
                  @"Data Source=PC-112;Initial Catalog=NotificationHub;Integrated Security=True";
                 connection.Open();
 
-                string sql = "select distinct AspNetUsers.UserName,AspNetUsers.Id from OperationManager,AspNetUsers where OperationManager.ServicelineId =" + Id;
+                //string sql = "select distinct AspNetUsers.UserName,AspNetUsers.Id from OperationManager,AspNetUsers where OperationManager.ServicelineId =" + Id;
+
+                string sql = "select UserName,Id from AspNetUsers where Id in (select OperationManagerId from[OperationManager] where ServicelineId =" + Id + ")";
 
                 SqlCommand myCommand = new SqlCommand(sql, connection);
 
